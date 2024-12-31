@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Test</title>
+    <title>Countdown</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,8 +22,8 @@
 
 
         var eventDate = new Date();
-        eventDate.setDate(eventDate.getDate() + 1);
-        eventDate.setHours(21, 42, 0, 0);
+        eventDate.setDate(eventDate.getDate());
+        eventDate.setHours(21, 50, 0, 0);
 
 
         var countdown = setInterval(function() {
@@ -53,9 +53,10 @@
                 main.innerHTML += '<p>It\'s finally over</p>';
                 main.innerHTML += '<p>No, it\'s the beginning</p>';
                 main.innerHTML += '<p>下班不积极，思想有问题</p>';
-                main.innerHTML += '<p>拿下4.0 ！</p>';
+                main.innerHTML += '<p>拿下4.0 !</p>';
                 main.innerHTML += '<p>Show time!</p>';
                 main.innerHTML += '<p>2024, I wasted a year</p>';
+                main.innerHTML += '<br>';
 
 
 
@@ -103,8 +104,6 @@
                     spark.style.left = (widthPercentage + i) + '%';
                     main.appendChild(spark);
                 }
-
-                
 
             }
         }, 1000);
