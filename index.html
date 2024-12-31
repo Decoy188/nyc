@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>New Year Countdown</h1>
+    </header>
+    <main>
+        
+    </main>
+    <footer>
+        <p>First Time Use Copilot in Coding XD</p>
+    </footer>
+
+
+    <script>
+
+
+        var eventDate = new Date();
+        eventDate.setDate(eventDate.getDate() + 1);
+        eventDate.setHours(0, 0, 0, 0);
+
+
+        var countdown = setInterval(function() {
+            var now = new Date();
+            var timeLeft = eventDate - now;
+
+            var main = document.querySelector('main');
+            if (timeLeft < 0) {
+                clearInterval(countdown);
+                alert('Happy New Year!');
+                
+                var firework = document.createElement('img');
+                firework.src = 'assets/firework.jpg';
+                firework.style.width = '100%';
+                main.innerHTML = '<h2>Happy New Year!</h2>';
+                main.appendChild(firework);
+                main.innerHTML += '<p>New Year New Game!</p>';
+                main.innerHTML += '<p>never let you go</p>';
+                main.innerHTML += '<p>我希望我能放松下，明年好忙啊啊啊啊</p>';
+                main.innerHTML += '<p>黑龍称霸！唯我独尊！</p>';
+                main.innerHTML += '<p>只要心念够强，全宇宙都会来成全你</p>';
+                main.innerHTML += '<p>hEy, HOw do I do tHiS QUEstiOn!?</p>';
+                main.innerHTML += '<p>also happy december last day im just studying like my life on edge of cliff</p>';
+                main.innerHTML += '<p>夜空里的残星，把黎明都唤醒</p>';
+                main.innerHTML += '<p>ye</p>';
+                main.innerHTML += '<p>我要睡觉！</p>';
+                main.innerHTML += '<p>It\'s finally over</p>';
+                main.innerHTML += '<p>No, it\'s the beginning</p>';
+                main.innerHTML += '<p>下班不积极，思想有问题</p>';
+                main.innerHTML += '<p>拿下4.0 ！</p>';
+                main.innerHTML += '<p>Show time!</p>';
+                main.innerHTML += '<p>2024, I wasted a year</p>';
+
+
+
+                
+            } else {
+                var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                var fireworkThread = document.createElement('div');
+                var totalTime = 1 * 60 * 60 * 1000; // 24 hours in milliseconds
+                var widthPercentage = (timeLeft / totalTime) * 100;
+                fireworkThread.style.width = widthPercentage + '%';
+                fireworkThread.style.height = '5px';
+                fireworkThread.style.backgroundColor = 'grey';
+                fireworkThread.style.borderRadius = '2.5px';
+                fireworkThread.style.position = 'absolute';
+                fireworkThread.style.top = '50%';
+                fireworkThread.style.left = '0';
+
+                var fireParticle = document.createElement('div');
+                fireParticle.id = 'ignition';
+                fireParticle.style.width = '10px';
+                fireParticle.style.height = '10px';
+                fireParticle.style.backgroundColor = 'red';
+                fireParticle.style.borderRadius = '50%';
+                fireParticle.style.position = 'absolute';
+                fireParticle.style.top = '50%';
+                fireParticle.style.left = widthPercentage + '%';
+                
+                var output = '<h2>Time Left: ' + hours + 'h ' + minutes + 'm ' + seconds + 's</h2>';
+                main.innerHTML = output;
+                main.appendChild(fireworkThread);
+                main.appendChild(fireParticle);
+
+                for (var i = 0; i < 3; i++) {
+                    var spark = document.createElement('div');
+                    spark.id = 'spark';
+                    spark.style.width = '5px';
+                    spark.style.height = '5px';
+                    spark.style.backgroundColor = 'yellow';
+                    spark.style.borderRadius = '50%';
+                    spark.style.position = 'fixed';
+                    spark.style.top = (50 + i ) + '%';
+                    spark.style.left = (widthPercentage + i) + '%';
+                    main.appendChild(spark);
+                }
+
+                
+
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
